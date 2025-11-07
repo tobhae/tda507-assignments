@@ -184,6 +184,7 @@ main()
 	for ( i=alignmentLength-1 ; i>=0 ; i-- ) {
 		printf("%c",alignX[i]);
 	}
+	// Task 1
 	printf("\n");
 	for ( i=alignmentLength-1 ; i>=0 ; i-- ) {
 		if ( alignX[i] == alignY[i] && alignX[i] != '-' ) {
@@ -199,8 +200,11 @@ main()
 	}
 	printf("\n");
 
+	/* Task 2
+	We only count positions where the two aligned characters are the same and neither side has a gap.
+	We divide this count by the total number of alignment columns. 
+	*/ 
 	int matches = 0;
-
 	for ( i = 0; i < alignmentLength; i++ ) {
 		if ( alignX[i] == alignY[i] && alignX[i] != '-' && alignY[i] != '-' ) {
 			matches++;
@@ -210,5 +214,15 @@ main()
 	double percent_identity = ((double)matches / (double)alignmentLength) * 100.0;
 	printf("\nPercent Identity: %.2f%%\n", percent_identity);
 
+	// Task 3
+	int missmatches = 0;
+	for ( i = 0; i < alignmentLength; i++ ) {
+		if ( alignX[i] != alignY[i] ) {
+			missmatches++;
+		}
+	}
+
+	printf("Hamming Distance:%2d\n", missmatches);
+	
 	return(1);
 }
