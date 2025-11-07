@@ -199,5 +199,16 @@ main()
 	}
 	printf("\n");
 
+	int matches = 0;
+
+	for ( i = 0; i < alignmentLength; i++ ) {
+		if ( alignX[i] == alignY[i] && alignX[i] != '-' && alignY[i] != '-' ) {
+			matches++;
+		}
+	}
+
+	double percent_identity = ((double)matches / (double)alignmentLength) * 100.0;
+	printf("\nPercent Identity: %.2f%%\n", percent_identity);
+
 	return(1);
 }
