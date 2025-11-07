@@ -186,7 +186,7 @@ main()
 	}
 	printf("\n");
 	for ( i=alignmentLength-1 ; i>=0 ; i-- ) {
-		if ( alignX[i] = alignY[i] && alignX[i] != '-' && alignY[i] != '-') {
+		if ( alignX[i] == alignY[i] && alignX[i] != '-' ) {
 			printf("|");
 		}
 		else {
