@@ -9,6 +9,7 @@
  */
 
 #include <stdio.h>
+#include <assert.h>
 
 #define MAX_LENGTH	100
 
@@ -224,5 +225,16 @@ main()
 
 	printf("Hamming Distance:%2d\n", missmatches);
 	
+	/* Testing */
+
+	/* Matrix score should match the traceback score */
+	assert(F[m][n] == score);
+
+	/* Checking if percent identity is valid */
+	assert(percent_identity >= 0.0 && percent_identity <= 100.0);
+
+	/* Checking if hamming distance is valid */
+	assert(missmatches >= 0);
+
 	return(1);
 }

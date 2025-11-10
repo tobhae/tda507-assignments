@@ -9,6 +9,7 @@
  */
 
 #include <stdio.h>
+#include <assert.h>
 
 #define MAX_LENGTH	100
 
@@ -121,5 +122,10 @@ main()
 
 	printf("Levenshtein Distance = %d\n", F[m][n]);
 	
+	/* Testing */
+
+	/* Distance should never be negative */
+	assert(F[m][n] >= 0);
+
 	return(1);
 }

@@ -9,6 +9,7 @@
  */
 
 #include <stdio.h>
+#include <assert.h>
 
 #define MAX_LENGTH	100
 
@@ -233,5 +234,16 @@ main()
 
 	printf("Hamming Distance:%2d\n", missmatches);
 	
+	/* Testing */
+
+	/* Check if maxScore correctly tracks highest DP cell */
+	assert(maxScore == F[maxI][maxJ]);
+
+	/* Check that alignment length is bigger than 0 */
+	assert(alignmentLength > 0);
+
+	/* Traceback should stop at score 0 */
+	assert(F[i][j] == 0);
+
 	return(1);
 }

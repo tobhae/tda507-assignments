@@ -9,6 +9,7 @@
  */
 
 #include <stdio.h>
+#include <assert.h>
 
 #define MAX_LENGTH	100
 
@@ -143,5 +144,10 @@ main()
 	
 	printf("Number of optimal alignments: %d\n", C[m][n]);
 	
+	/* Testing */
+
+	/* ATTA ATTTTA should be = 6 */
+	assert(C[m][n] == 6);
+
 	return(1);
 }
