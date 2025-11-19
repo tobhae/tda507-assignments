@@ -10,7 +10,7 @@ def dist(a, b):
 # Reading the input
 def read_atoms(filename):
     atoms = []
-    
+
     with open(filename) as f:
         for line in f:
             parts = line.split()
@@ -77,5 +77,18 @@ if __name__ == "__main__":
     nbrs = build_neighbour_list(atoms)
     order = walk_chain(atoms, nbrs)
 
+    print(f"Reading test_q1.txt")
+    print(f"Total number of alpha-carbons: {len(order)}")
+
     for idx in order:
         print(atoms[idx][0])
+
+    atoms = read_atoms("data_q1.txt")
+    nbrs = build_neighbour_list(atoms)
+    order = walk_chain(atoms, nbrs)
+
+    print(f"\nReading data_q1.txt")
+    print(f"Total number of alpha-carbons: {len(order)}")
+
+    for idx in order:
+        print(atoms[idx][0])    
