@@ -1,3 +1,5 @@
+# Tobias Hägglund (tobhag@chalmers.se)
+# TDA507 assignment 2: Main chain modelling
 import math
 
 target = 3.8
